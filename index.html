@@ -121,7 +121,7 @@
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             transition: var(--transition);
-			padding: 0.8rem 0;
+            padding: 0.8rem 0;
         }
         
         .header.scrolled {
@@ -143,7 +143,7 @@
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-dark);
-			white-space: nowrap;
+            white-space: nowrap;
         }
         
         .logo span {
@@ -151,7 +151,7 @@
             margin-left: 0.3rem;
         }
 
-		.logo-text-full {
+        .logo-text-full {
             display: block;
         }
         
@@ -184,7 +184,7 @@
             color: var(--primary);
         }
         
-		.nav .btn {
+        .nav .btn {
             padding: 0.6rem 1.2rem;
             font-size: 0.9rem;
         }
@@ -194,7 +194,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--primary-dark);
-			margin-left: 1rem;
+            margin-left: 1rem;
         }
         
         /* Главный баннер */
@@ -301,52 +301,45 @@
         }
         
         .service-card {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
-		.service-img {
-	    height: 250px;
- 		overflow: hidden;
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		}
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
         
         .service-img img {
-    	width: 100%;
-    	height: 100%;
-    	object-fit: cover;
-    	transition: var(--transition);
-  		}
-        /* Для лучшего отображения картинок */
- 		 .service-card:nth-child(1) .service-img img {
- 		   object-position: center 30%;
- 		 }
-  
- 		 .service-card:nth-child(2) .service-img img {
- 		   object-position: center 40%;
- 		 }
-  
- 		 .service-card:nth-child(3) .service-img img {
-		    object-position: center 25%;
- 		 }
-  
-		  .service-card:nth-child(4) .service-img img {
-		    object-position: center 35%;
-		  }
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        /* Фикс для обрезанных изображений */
+        .service-card:nth-child(1) .service-img img {
+            object-position: center 25%;
+        }
+        
+        .service-card:nth-child(2) .service-img img {
+            object-position: center 35%;
+        }
+        
+        .service-card:nth-child(3) .service-img img {
+            object-position: center 25%;
+        }
+        
+        .service-card:nth-child(4) .service-img img {
+            object-position: center 30%;
+        }
+        
         .service-card:hover .service-img img {
             transform: scale(1.05);
         }
-        about-content h4 {
- 		margin-top: 3rem; /* Увеличили отступ сверху */
-		margin-bottom: 1.5rem;
-		padding-top: 1rem; /* Дополнительный отступ */
-		border-top: 1px solid rgba(93, 61, 139, 0.1); /* Легкая разделительная линия */
-		}
-		
+        
         .service-icon {
             position: absolute;
             bottom: -25px;
@@ -443,6 +436,14 @@
         
         .timeline {
             margin-top: 2rem;
+        }
+        
+        /* Фикс для отступа перед "Образование и опыт работы" */
+        .about-content h4 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(93, 61, 139, 0.1);
         }
         
         .timeline-item {
@@ -762,7 +763,7 @@
             transition-delay: 0.3s;
         }
 
-		/* Адаптивность шапки */
+        /* Адаптивность шапки */
         @media (max-width: 768px) {
             .nav-list {
                 display: none;
@@ -845,6 +846,11 @@
             .section {
                 padding: 4rem 0;
             }
+            
+            /* Адаптивность для картинок услуг */
+            .service-img {
+                height: 200px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -895,7 +901,6 @@
             </nav>
         </div>
     </header>
-
 
     <!-- Главный баннер -->
     <section id="hero" class="hero">
@@ -1066,7 +1071,6 @@
                     
                     <div class="hero-cta" style="margin-top: 2rem;">
                         <a href="#contact" class="btn btn-primary">Запись на консультацию</a>
-                    
                     </div>
                 </div>
             </div>
@@ -1137,8 +1141,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
-							<input type="email" id="email" class="form-control">
-                            
+                            <input type="email" id="email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="service" class="form-label">Интересующая услуга</label>
@@ -1153,7 +1156,7 @@
                                 <option value="Автомобильное право">Автомобильное право</option>
                                 <option value="Медицинское право">Медицинское право</option>
                                 <option value="Для иностранных граждан">Для иностранных граждан</option>
-								<option value="Другое">Другое</option>
+                                <option value="Другое">Другое</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -1294,33 +1297,34 @@
     </footer>
 
     <script>
-		// Мобильное меню
-            const mobileToggle = document.getElementById('mobile-toggle');
-            const navList = document.getElementById('nav-list');
-            
-            if (mobileToggle) {
-                mobileToggle.addEventListener('click', function() {
-                    navList.classList.toggle('active');
-                    const icon = this.querySelector('i');
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                });
-            }
-		            // Закрываем меню при клике на пункт
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (navList.classList.contains('active')) {
-                        navList.classList.remove('active');
-                        const icon = document.querySelector('.mobile-toggle i');
-                        if (icon) {
-                            icon.classList.add('fa-bars');
-                            icon.classList.remove('fa-times');
-                        }
+        // Мобильное меню
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navList = document.getElementById('nav-list');
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                navList.classList.toggle('active');
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+        }
+        
+        // Закрываем меню при клике на пункт
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navList.classList.contains('active')) {
+                    navList.classList.remove('active');
+                    const icon = document.querySelector('.mobile-toggle i');
+                    if (icon) {
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
                     }
-                });
-            });	
-        // Инициализация EmailJS с публичным ключом
-        // ЗАМЕНИТЕ 'YOUR_PUBLIC_KEY' НА ВАШ НАСТОЯЩИЙ PUBLIC KEY ИЗ EMAILJS
+                }
+            });
+        });	
+        
+        // Инициализация EmailJS
         emailjs.init("T5jhaDD24Ucym63WW");
         
         document.addEventListener("DOMContentLoaded", function() {
@@ -1347,7 +1351,6 @@
                 };
                 
                 // Отправляем письмо через EmailJS
-                // ЗАМЕНИТЕ 'YOUR_SERVICE_ID' и 'YOUR_TEMPLATE_ID' НА ВАШИ ДАННЫЕ
                 emailjs.send("service_6sj5aww", "template_h559a19", formData)
                     .then(function(response) {
                         // Успешная отправка
