@@ -307,22 +307,45 @@
         }
         
         .service-img {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
+  		 	 height: 250px; /* Увеличим высоту */
+  			overflow: hidden;
+ 		   position: relative;
+ 		   display: flex;
+ 		   align-items: center;
+  		  justify-content: center;
+  		}
         
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
+          .service-img img {
+ 		   width: 100%;
+ 		   height: 100%;
+ 		   object-fit: cover;
+ 		   transition: var(--transition);
+		  }
+        /* Для лучшего отображения картинок */
+ 		 .service-card:nth-child(1) .service-img img {
+ 		   object-position: center 30%;
+ 		 }
+  
+ 		 .service-card:nth-child(2) .service-img img {
+ 		   object-position: center 40%;
+ 		 }
+  
+ 		 .service-card:nth-child(3) .service-img img {
+		    object-position: center 25%;
+ 		 }
+  
+		  .service-card:nth-child(4) .service-img img {
+		    object-position: center 35%;
+		  }
         .service-card:hover .service-img img {
             transform: scale(1.05);
         }
-        
+        about-content h4 {
+ 		   margin-top: 3rem; /* Увеличили отступ сверху */
+		    margin-bottom: 1.5rem;
+		    padding-top: 1rem; /* Дополнительный отступ */
+		    border-top: 1px solid rgba(93, 61, 139, 0.1); /* Легкая разделительная линия */
+		  }
         .service-icon {
             position: absolute;
             bottom: -25px;
@@ -880,7 +903,7 @@
             <div class="hero-subtitle">Право есть искусство добра и справедливости</div>
             <p class="hero-text">Ваш надёжный советник, для которого во главе профессионального ориентира – закон и справедливость. Более 5 лет я оказываю юридические услуги в различных отраслях права.</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Бесплатная консультация*</a>
+                <a href="#contact" class="btn btn-primary">Бесплатная консультация *</a>
              </div>
             <div class="hero-note">
                 <i class="fas fa-star"></i>
@@ -1112,8 +1135,8 @@
                             <input type="tel" id="phone" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <label for="email" class="form-label">Email</label>
+                            
                         </div>
                         <div class="form-group">
                             <label for="service" class="form-label">Интересующая услуга</label>
