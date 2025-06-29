@@ -366,7 +366,7 @@
         // Инициализация EmailJS
         (function() {
             // Замените эти значения на свои из аккаунта EmailJS
-            emailjs.init("YOUR_USER_ID"); // Ваш User ID из EmailJS
+            emailjs.init("kasperskui"); // Ваш User ID из EmailJS
         })();
         
         document.addEventListener("DOMContentLoaded", function() {
@@ -391,7 +391,7 @@
                 };
                 
                 // Отправка через EmailJS
-                emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+                emailjs.send("service_6sj5aww", "template_h559a19", formData)
                     .then(function(response) {
                         // Успешная отправка
                         showNotification('Сообщение успешно отправлено!', 'success');
