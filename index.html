@@ -1269,6 +1269,31 @@
     </footer>
 
     <script>
+		// Мобильное меню
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navList = document.getElementById('nav-list');
+            
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                });
+            }
+		            // Закрываем меню при клике на пункт
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navList.classList.contains('active')) {
+                        navList.classList.remove('active');
+                        const icon = document.querySelector('.mobile-toggle i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                });
+            });	
         // Инициализация EmailJS с публичным ключом
         // ЗАМЕНИТЕ 'YOUR_PUBLIC_KEY' НА ВАШ НАСТОЯЩИЙ PUBLIC KEY ИЗ EMAILJS
         emailjs.init("T5jhaDD24Ucym63WW");
